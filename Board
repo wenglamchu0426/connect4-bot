@@ -1,15 +1,6 @@
-#
-# ps9pr1.py (Problem Set 9, Problem 1)
-#
-# A Connect Four Board class
-#
-# Computer Science 111
-#
-
 class Board:
     """ a data type for a Connect Four board with arbitrary dimensions
     """   
-    ### add your constructor here ###
     def __init__(self, height, width): 
         """ Contructor for board objects 
         """
@@ -22,8 +13,7 @@ class Board:
         """ Returns a string that represents a Board object.
         """
         s = ''         #  begin with an empty string
-
-        # add one row of slots at a time to s
+        
         for row in range(self.height):
             s += '|'   # one vertical bar at the start of the row
 
@@ -32,7 +22,6 @@ class Board:
 
             s += '\n'  # newline at the end of the row
 
-        ### add your code here ###
         for col in range(2*self.width + 1):
             s += '-' 
         s += '\n' 
@@ -63,12 +52,7 @@ class Board:
             row -= 1
         
         self.slots[row][col] = checker
-        
-        ### put the rest of the method here ###
-        
-
-    
-    ### add your reset method here ###
+     
     def reset(self):
         """ resets the board; removes all pieces
         """
@@ -94,8 +78,7 @@ class Board:
                 checker = 'O'
             else:
                 checker = 'X'
-
-    ### add your remaining methods here
+                
     def can_add_to(self, col):
         """returns True is there is an empting slot in the col, False if otherwise 
         """
